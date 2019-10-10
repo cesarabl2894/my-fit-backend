@@ -24,10 +24,10 @@ const games = [
     }
 ];
 
-const getGames = () => {
-	console.log(games);
-    return games;
-}
+// const getGames = (request ,h) => {
+// 	console.log(games);
+//     return new Promise(games;
+// }
 
 const init = async () => {
 
@@ -47,22 +47,24 @@ const init = async () => {
         }
 	});
 	
-	server.route(
-		{
-			method: 'GET',
-			path: '/games',
-			handler: getGames(),
-			options: {
+	// server.route(
+	// 	{
+	// 		method: 'GET',
+	// 		path: '/games',
+	// 		handler: (request, h) => {
+	// 			return games
+	// 		},
+	// 		options: {
 				
-				tags: ['api']
-			},
-		}
-	);
+	// 			tags: ['api']
+	// 		},
+	// 	}
+	// );
 
 	try{
-		// for(let route of routes) {
-		// 	server.route(route);
-		// }
+		for(let route of routes) {
+			server.route(route);
+		}
 		await server.start();
 		console.log(`Server is running on ${server.info.uri}`);
 	}catch(error){

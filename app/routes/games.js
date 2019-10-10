@@ -12,13 +12,14 @@ const getGames = () => {
     return games;
 }
 
-module.exports [
+module.exports = [
     {
         method: 'GET',
         path: '/games',
-        
-        options: {
-            handler: getGames(),
+        handler: (request, h) => {
+            return games
+        },
+        options: {            
             tags: ['api']
         },
     }

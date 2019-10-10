@@ -5,6 +5,8 @@ const glob = require('glob');
 //     fs.read
 // }
 
+const isArray = Array.isArray;
+
 function getFiles(path, realpath) {
     console.log(path, realpath);
     return glob.sync(path, {
@@ -26,9 +28,12 @@ var getRoutes = () => {
     // dirFiles();
 
 
+    // console.log(routesPath);
+    if(isArray(routesPath)){
 
-    for (let route of routesPath) {
-        routes.push(require(route));
+        for (let route of routesPath) {
+            routes.push(require(route));
+        }
     }
 
     console.log(routes);
