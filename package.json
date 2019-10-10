@@ -1,0 +1,14 @@
+{
+  "name": "hapi-giftshoop-backend",
+  "version": "1.0.0",
+  "description": "This is the reengineering of the Backend of the React Shop ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cesar Bonel",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0"
+  }
+}
