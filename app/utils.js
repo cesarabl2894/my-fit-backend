@@ -1,10 +1,6 @@
 const fs = require('fs');
 const glob = require('glob');
 
-// function getRoutes() {
-//     fs.read
-// }
-
 const isArray = Array.isArray;
 
 function getFiles(path, realpath) {
@@ -20,15 +16,6 @@ var getRoutes = () => {
     let routesPath = getFiles('app/routes/**/*.js', true);
     let routes = [];
 
-    // const dirFiles = () => fs.readdir('./routes/', (err,files) => {
-    //     console.log(files)
-        
-    // });
-
-    // dirFiles();
-
-
-    // console.log(routesPath);
     if(isArray(routesPath)){
 
         for (let route of routesPath) {
