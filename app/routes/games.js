@@ -8,6 +8,8 @@ const games = [
     }
 ];
 
+console.log(process.env.PORT);
+
 const getGames = () => {
     return games;
 }

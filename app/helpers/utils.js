@@ -4,7 +4,6 @@ const glob = require('glob');
 const isArray = Array.isArray;
 
 function getFiles(path, realpath) {
-    console.log(path, realpath);
     return glob.sync(path, {
         cwd: require('path').join(__dirname, '..'),
         nodir: true,
@@ -13,7 +12,7 @@ function getFiles(path, realpath) {
 };
 
 var getRoutes = () => {
-    let routesPath = getFiles('app/routes/**/*.js', true);
+    let routesPath = getFiles('routes/**/*.js', true);
     let routes = [];
 
     if(isArray(routesPath)){
@@ -28,7 +27,16 @@ var getRoutes = () => {
     return routes;
 };
 
+const promise = (fn) =>{
+    return new Promise(async function(resolve,reject){
+        await fn(resolve,reject).catch(function(ex){
+            reject(ex);
+        });
+    });
+}
+
 module.exports = {
     getFiles,
-    getRoutes
+    getRoutes,
+    promise
 };
