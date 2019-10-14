@@ -1,0 +1,45 @@
+const pckg = require('../../package');
+const confidence = require('confidence');
+
+const internals = {
+    criteria : {
+        env: process.env.NODE_ENV
+    }
+};
+
+internals.manifest = {
+	server: {
+		cache: false,
+		port: process.env.PORT || 3030,
+		host: process.env.HOST || 'localhost'
+	},
+	register: {
+		plugins: [
+			{ 
+				plugin: 'vision' 
+			},
+			{
+				plugin: 'inert'
+			},
+			{
+                plugin: 'hapi-swagger',
+				options: {
+					info: {
+						title: 'API Documentation',
+						version: pckg.version
+                    },
+                    documentationPath: '/'
+				}
+			}
+		]
+	}
+};
+
+internals.store = new confidence.Store(internals.manifest);
+
+exports.get = (key, opts = {}) => {
+
+    const criteria = { ... internals.manifest, ... opts };
+
+    return internals.store.get(key, internals.criteria);
+};
