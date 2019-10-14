@@ -46,20 +46,6 @@ const init = async () => {
             return 'Hello World!';
         }
 	});
-	
-	// server.route(
-	// 	{
-	// 		method: 'GET',
-	// 		path: '/games',
-	// 		handler: (request, h) => {
-	// 			return games
-	// 		},
-	// 		options: {
-				
-	// 			tags: ['api']
-	// 		},
-	// 	}
-	// );
 
 	try{
 		for(let route of routes) {
