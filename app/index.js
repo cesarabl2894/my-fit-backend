@@ -13,22 +13,6 @@ const server = Hapi.Server({
 
 });
 
-
-const games = [
-    {
-        name: 'The Legend of Zelda',
-        releaseYear: 1995,
-        developer: 'Gamefreak',
-        price: 50,
-        decription: 'LoremIpsum'
-    }
-];
-
-// const getGames = (request ,h) => {
-// 	console.log(games);
-//     return new Promise(games;
-// }
-
 const init = async () => {
 
 	process.on('unhandledRejection', error => {
