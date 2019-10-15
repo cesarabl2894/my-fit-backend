@@ -10,18 +10,18 @@ class Mysql {
     }
 
     async createConnection(){
-        console.log(this);
         return await this.mysql.createConnection({
             host     : this.host,
             user     : this.user,
             password : this.password,
-            database : 'cruddemo'
+            database : this.db
         });
     }
 
     async execute(query, options) {
         this.conn = this.conn || await this.createConnection();
-        return this.conn.execute(query, options);
+        const [ rows ] =  await this.conn.execute(query, options);
+        return rows;
     }
 
     async close() {
