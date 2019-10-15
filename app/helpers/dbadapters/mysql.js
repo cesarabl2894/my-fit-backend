@@ -1,26 +1,27 @@
 class Mysql {
     constructor(){
-        this.user = process.env.MYSQL_USERNAME;
-        this.pass = process.env.MYSQL_PASS;
-        this.host = process.env.MYSQL_SERVER;
-        this.pass = process.env.MYSQL_DB;
-        this.mysql = require('mysql');
+        this.user = process.env.MYSQL_USER;
+        this.password = process.env.MYSQL_PASS;
+        this.host = process.env.MYSQL_HOST;
+        this.db = process.env.MYSQL_DB;
+        this.mysql = require('mysql2/promise');
         this.conn = null;
         
     }
 
     async createConnection(){
+        console.log(this);
         return await this.mysql.createConnection({
-            host     : this.user,
+            host     : this.host,
             user     : this.user,
-            password : this.pass,
-            database : this.MYSQL_DB
+            password : this.password,
+            database : 'cruddemo'
         });
     }
 
     async execute(query, options) {
         this.conn = this.conn || await this.createConnection();
-        return this.conn.query(query, options);
+        return this.conn.execute(query, options);
     }
 
     async close() {
