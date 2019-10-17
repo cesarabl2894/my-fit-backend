@@ -1,5 +1,4 @@
-const Games = require('../models/services/games');
-const GamesService = new Games();
+const GamesService = require('../models/services/games');
 
 class GamesCtrl {
     async getGames() {
@@ -9,4 +8,4 @@ class GamesCtrl {
     }
 }
 
-module.exports = GamesCtrl;
+module.exports = new GamesCtrl();

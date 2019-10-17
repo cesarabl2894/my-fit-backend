@@ -21,7 +21,7 @@ class Mysql {
     }
 
     async close() {
-        return this.conn.end();
+        return this.conn.release();
     }
 }
 

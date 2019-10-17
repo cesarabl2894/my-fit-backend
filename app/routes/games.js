@@ -1,11 +1,10 @@
-const GamesService = require('../models/services/games');
-const GamesFn = new GamesService();
+const gamesCtrl = require('../controllers/games');
 
 module.exports = [
     {
         method: 'GET',
         path: '/games',
-        handler: GamesFn.getGames,
+        handler: gamesCtrl.getGames,
         options: {            
             tags: ['api']
         },

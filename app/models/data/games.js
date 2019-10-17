@@ -1,5 +1,5 @@
 const adapter = require('../../helpers/db');
-class Games {
+class GamesDAO {
     constructor() {
         this.db = new adapter();
     }
@@ -11,5 +11,5 @@ class Games {
 }
 
 
-module.exports = Games;
+module.exports = new GamesDAO();
 

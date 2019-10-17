@@ -1,4 +1,3 @@
-const dbConfig = require('../config/db-config');
 const Mysql = require('./dbadapters/mysql')
 
 class db {
@@ -14,13 +13,19 @@ class db {
     async execute(sql, options, datasource = '') {
         const config = this.getDBConfiguration()[this.getEnvironment()][datasource];
         if(!config) throw(`Datasource '${datasource}' was not found on ${this.getEnvironment()} environment.`);
-
-        let result;
         switch(config.engine){
             case "mysql":
+                // Return a new Promise to 
                 const adapter = new Mysql(config);
-                result = await adapter.execute(sql, options);
-                return result;
+                return new Promise((resolve,reject) => {
+                    adapter.execute(sql, options)
+                    .then( response => {
+                        resolve(response)
+                    })
+                    .catch(error => {
+                        reject(error)
+                    });
+                })
             break;
             case 'oracle':
             break;

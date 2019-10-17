@@ -1,11 +1,10 @@
 const gamesDAO = require('../data/games');
-const gamesData = new gamesDAO();
 
 class GamesService {
 
     async getGames () {
         try{
-            const games  = await gamesData.getGames();
+            const games  = await gamesDAO.getGames();
             return games;
         }catch(error){
             throw('Something went wrong with the request');
@@ -13,4 +12,4 @@ class GamesService {
     }
 }
     
-module.exports = GamesService;
+module.exports = new GamesService();
