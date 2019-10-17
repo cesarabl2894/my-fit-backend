@@ -8,7 +8,6 @@ const utils = require('./helpers/utils');
 const Glue = require('@hapi/glue');
 const Manifest = require('./config/manifest');
 
-
 const options = {
     relativeTo: __dirname
 };
@@ -18,9 +17,9 @@ const start = async () => {
 	process.on('unhandledRejection', error => {
 		console.log('unhandledRejection', error);
 	});
-
+	// Routes imports
 	const routes = utils.getRoutes();
-
+	// Server inilization with Glue
 	const server = await Glue.compose(Manifest.get('/'), options);
 
 	try{

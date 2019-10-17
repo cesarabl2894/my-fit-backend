@@ -1,16 +1,11 @@
-const Mysql = require('../helpers/dbadapters/mysql');
-const db = new Mysql();
-
-async function getGames() {
-    const games = await db.execute('SELECT * FROM Game',[]);
-    return games;
-}
+const GamesService = require('../models/services/games');
+const GamesFn = new GamesService();
 
 module.exports = [
     {
         method: 'GET',
         path: '/games',
-        handler: getGames,
+        handler: GamesFn.getGames,
         options: {            
             tags: ['api']
         },
