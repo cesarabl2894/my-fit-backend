@@ -1,10 +1,7 @@
-const adapter = require('../../helpers/db');
+const db = require('../../helpers/db');
 class GamesDAO {
-    constructor() {
-        this.db = new adapter();
-    }
     async getGames() {
-        const games = await this.db.execute('SELECT * FROM Game',[],'games');
+        const games = await db.execute('SELECT * FROM Game',[],'games');
         return games;
     }
     
