@@ -6,7 +6,8 @@ module.exports = [
         path: '/games',
         handler: gamesCtrl.getGames,
         options: {            
-            tags: ['api']
+            tags: ['api'],
+            auth: 'jwt'
         },
     }
 ];

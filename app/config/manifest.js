@@ -25,6 +25,9 @@ internals.manifest = {
 				plugin: 'inert'
 			},
 			{
+				plugin: 'hapi-auth-jwt2'
+			},
+			{
                 plugin: 'hapi-swagger',
 				options: {
 					info: {

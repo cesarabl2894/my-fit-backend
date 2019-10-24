@@ -18,6 +18,8 @@
     "confidence": "^4.0.2",
     "dotenv": "^8.1.0",
     "glob": "^7.1.4",
+    "hapi-auth-jwt2": "^8.8.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.7.0"
   },
   "devDependencies": {
