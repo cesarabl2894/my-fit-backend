@@ -34,9 +34,13 @@ const promise = (fn) =>{
         });
     });
 }
+const validateToken = async function (decoded, request, h) {
+	return {isValid: true};
+};
 
 module.exports = {
     getFiles,
     getRoutes,
-    promise
+    promise,
+    validateToken
 };
