@@ -1,7 +1,7 @@
 'use strict';
 // Environment Variables retrieve
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 // Dependencies for Server inilization 
 const { getRoutes, validateToken } = require('./helpers/utils');
