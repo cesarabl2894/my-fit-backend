@@ -29,7 +29,7 @@ const start = async () => {
 	{ key: process.env.SECRET_TOKEN_KEY,
 		validate: validateToken
 	});
-
+	console.log(process.env);
 	try{
 		for(let route of routes) {
 			server.route(route);
