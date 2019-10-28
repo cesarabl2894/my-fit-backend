@@ -1,7 +1,7 @@
 'use strict';
 // Environment Variables retrieve
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Dependencies for Server inilization 
 const { getRoutes, validateToken } = require('./helpers/utils');
@@ -29,7 +29,7 @@ const start = async () => {
 	{ key: process.env.SECRET_TOKEN_KEY,
 		validate: validateToken
 	});
-	console.log(process.env);
+	console.log(process.env.NODE_ENV);
 	try{
 		for(let route of routes) {
 			server.route(route);
