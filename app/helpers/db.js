@@ -7,6 +7,7 @@ class db {
     
     getDBConfiguration(){
         const dbConfig = require('../config/db-config');
+        // console.log(dbConfig);
         return dbConfig;
     }
 
