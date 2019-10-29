@@ -2,24 +2,22 @@ const db = require('../../helpers/db');
 
 class UsersDAO {
     async addUser(data){
-        const user =  await db.execute(`INSERT INTO User (first_name, last_name, email, address, gamertag, profile_picture,
-            password, role)
-            VALUES (?,?,?,?,?,?,?,?);`,
+        const user =  await db.execute(`INSERT INTO users (email, first_name, last_name, password, height, weight, role)
+            VALUES (?,?,?,?,?,?,?);`,
             [
+                data.email,
                 data.first_name,
                 data.last_name,
-                data.email,
-                data.address,
-                data.gamertag,
-                data.profile_picture,
                 data.password,
+                data.height,
+                data.weight,
                 data.role
             ],
-            'games');
+            'my-fit');
         return user;
     }
     async getUserbyEmail(email) {
-        const user = await db.execute(`SELECT * FROM User WHERE email = ?`, [email], 'games');
+        const user = await db.execute(`SELECT * FROM users WHERE email = ?`, [email], 'my-fit');
         return user;
     }
     

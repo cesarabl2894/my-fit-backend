@@ -23,7 +23,7 @@ class db {
                         resolve(response)
                     })
                     .catch(error => {
-                        reject(error)
+                        console.log(error)
                     });
                 })
             break;
