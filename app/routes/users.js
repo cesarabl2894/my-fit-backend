@@ -11,14 +11,14 @@ module.exports = [
             validate: {         
                 payload : {
 
+                    email: Joi.string().required().min(2).max(30),
                     first_name: Joi.string().required().min(2).max(20),
                     last_name:Joi.string().required().min(2).max(20),
-                    email: Joi.string().required().min(2).max(30),
-                    address: Joi.string().required().min(5),
-                    gamertag: Joi.string().required().min(2).max(30),
-                    profile_picture: Joi.string().required().min(2).max(100),
                     password: Joi.string().required().min(7).max(50),
-                    role: Joi.string().required().min(2).max(30)
+                    height: Joi.number(),
+                    weight: Joi.number(),
+                    role: Joi.string().required().min(2).max(30),
+
                 }       
             }
         }
