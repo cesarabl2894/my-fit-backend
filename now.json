@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "builds": [{ "src": "/app/server.js", "use": "@now/node-server" }],
+    "routes": [
+        {
+            "src": "/exercises/all/",
+            "dest": "/app/server.js",
+            "methods": ["GET"]
+        }
+    ]
+}

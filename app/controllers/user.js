@@ -1,5 +1,5 @@
-const UsersService = require('../models/services/users');
-const encryptService = require('../models/services/encrypt');
+const UsersService = require('../services/users');
+const encryptService = require('../services/encrypt');
 
 
 class UsersCtrl {

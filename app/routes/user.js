@@ -1,4 +1,4 @@
-const usersCtrl = require('../controllers/users');
+const usersCtrl = require('../controllers/user');
 const Joi = require('joi');
 
 module.exports = [

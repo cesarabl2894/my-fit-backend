@@ -1,4 +1,4 @@
-const ExercisesService = require('../models/services/exercises');
+const ExercisesService = require('../services/exercises');
 
 class ExerciseCtrl {
     async getExercises() {

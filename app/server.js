@@ -7,12 +7,10 @@ dotenv.config();
 const { getRoutes, validateToken } = require('./helpers/utils');
 const Glue = require('@hapi/glue');
 const Manifest = require('./config/manifest');
-const jwt = require('jsonwebtoken');
 
 const options = {
     relativeTo: __dirname
 };
-
 // var token = jwt.sign({ accountId: 123 ,role: 'admin' }, process.env.SECRET_TOKEN_KEY, { algorithm: 'HS256'} );
 
 const start = async () => {

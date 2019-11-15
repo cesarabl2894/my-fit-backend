@@ -1,4 +1,4 @@
-const exercisesDAO = require('../data/exercises');
+// const exercisesDAO = require('../data/exercises');
 
 class ExercisesServices {
 

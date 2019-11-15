@@ -1,4 +1,4 @@
-const ExerciseCtrl = require('../controllers/exercises');
+const ExerciseCtrl = require('../controllers/exercise');
 const Joi = require('joi');
 
 module.exports = [
@@ -23,5 +23,14 @@ module.exports = [
             }
         }
 
-    }
+    },
+    {
+        method: 'GET',
+        path: '/exercises/sss/',
+        handler: ExerciseCtrl.getExercises,
+        options: {            
+            tags: ['api']
+        },
+    },
+    
 ];
